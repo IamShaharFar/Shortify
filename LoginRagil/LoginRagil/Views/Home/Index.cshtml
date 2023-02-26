@@ -1,0 +1,51 @@
+﻿<body class="bg-light">
+    <h1 class="text-center text-primary display-2 fw-bold"> Urlshorter <i class="fa-solid fa-link"></i></h1>
+    <div class="bg-white p-3 rounded-3 d-flex justify-content-center flex-column mb-3">
+        <input id="fullurl" placeholder="Enter Your Full Url :" type="text" class="form-control mb-3" />
+        <div class="d-flex ">
+            <input id="shorturl" disabled style="height:5vw;font-weight:400;" class="fw-bold form-control mb-3 text-center" />
+            <a id="open" style="height:5vw;display:flex;flex-direction:column;justify-content:center;" class="btn btn-primary fw-bold"><i class="fa-solid fa-up-right-from-square fa-2x"></i></a>
+        </div>
+        <div id="alal" style="display:none" class="alert alert-secondary text-center fw-bold" role="alert">succefully copy.</div>
+        <div class="d-flex justify-content-evenly">
+            <a id="Clean" class="btn btn-primary align-self-center mx-auto" style="width:23vw">Clean url <i class="fa-solid fa-text-slash"></i></a>
+            <a id="gen" class="btn btn-primary align-self-center mx-auto" style="width:23vw">Generate <i class="fa-solid fa-link"></i></a>
+            <a id="Copyurl" class="btn btn-primary align-self-center mx-auto" style="width:23vw">Copy url <i class="fa-regular fa-clipboard"></i></a>
+        </div>
+    </div>
+    <div class="bg-white p-3 rounded-3 mb-3">
+        <h2>Simple and fast URL shortener!</h2>
+        <p>
+            A URL shortener is a tool to turn a long URL into a shorter one.
+            It helps to share links on platforms with character limits like social media.
+            A URL shortener maps the original URL to a shorter URL and stores the mapping in a database.
+            When the shortened URL is clicked, it redirects the user to the original URL.
+        </p>
+        <p>
+            URL shorteners can also track clicks on links, useful for marketing and analytics.
+            There are many free and paid URL shortener services such as Bitly, TinyURL, and Adf.ly.
+            Simply paste the long URL and it will generate a shortened link for you.
+        </p>
+    </div>
+
+    @*class="d-flex justify-content-evenly"*@
+    <div class="d-flex justify-content-evenly">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+            <i class="fa-solid fa-shop display-4"></i>
+            <span>At the highest quality and level available</span>
+        </div>
+        <div class="d-flex flex-column justify-content-center">
+            <i class="fa-sharp fa-solid fa-lock display-4"></i>
+            <span>Secure</span>
+        </div>
+        <div class="d-flex flex-column justify-content-center">
+            <i class="fa-solid fa-hamsa display-4"></i>
+            <span>Reliable</span>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script src="/js/Generate.js"></script>
+        <script src="https://kit.fontawesome.com/86106e9417.js" crossorigin="anonymous"></script>
+    }
+</body>

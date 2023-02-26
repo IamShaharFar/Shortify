@@ -1,0 +1,73 @@
+﻿@using LoginRagil.Models
+@model UserProfileModel
+
+<h2>Profile Settings</h2>
+
+@using (Html.BeginForm("Settings", "Accounts", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @if (Model.Errors != "")
+        {
+            <div class="form-outline flex-fill mb-0">
+                <span class="text-danger">@Model.Errors</span>
+            </div>
+        }
+
+        <div class="form-outline flex-fill mb-0">
+            <label>Name</label>
+            <input asp-for="Name" placeholder="Your Name" type="text" id="form3Example1c" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-outline flex-fill mb-0">
+            <label>Old Password</label>
+            <input asp-for="OldPassword" placeholder="Your Old Password" type="password" id="form3Example1c" class="form-control" />
+            <span asp-validation-for="OldPassword" class="text-danger"></span>
+        </div>
+
+        <div class="form-outline flex-fill mb-0">
+            <label>NewPassword</label>
+            <input asp-for="NewPassword" placeholder="Your New Password" type="password" id="form3Example1c" class="form-control" />
+            <span asp-validation-for="NewPassword" class="text-danger"></span>
+        </div>
+
+        <div class="form-outline flex-fill mb-0">
+            <label>ConfirmPassword</label>
+            <input asp-for="ConfirmPassword" placeholder="Your Confirm Password" type="password" id="form3Example1c" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        @*<div class="form-group">
+    <label>Name</label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+    <label>Old password</label>
+    <input asp-for="OldPassword" class="form-control" />
+    <span asp-validation-for="OldPassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+    @Html.LabelFor(m => m.NewPassword)
+    @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.NewPassword)
+    </div>
+
+    <div class="form-group">
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+    </div>*@
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+}
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/86106e9417.js" crossorigin="anonymous"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

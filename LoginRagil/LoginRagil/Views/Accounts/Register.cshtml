@@ -1,0 +1,85 @@
+﻿@using LoginRagil.Models;
+@model RegisteUserModel
+
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-lg-12 col-xl-11">
+        <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                        <p class="lead fw-normal mb-0 me-3">Register in with</p>
+                        <a asp-action="GoogleRegister" asp-controller="Accounts" type="button" class="btn btn-primary btn-floating mx-1">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </div>
+
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                    </div>
+
+                    @using (Html.BeginForm("Register", "Accounts", FormMethod.Post))
+                    {
+                        @*<form asp-action="Rgister" asp-controller="Home" method="post" class="mx-1 mx-md-4">*@
+                        <div class="form-group">
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input asp-for="Name" placeholder="Your Name" type="text" id="form3Example1c" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input asp-for="Email" placeholder="Your Email" type="email" id="form3Example3c" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input asp-for="Password" placeholder="Password" type="password" id="form3Example4c" class="form-control" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input asp-for="ConfirmPassword" placeholder="Repeat your password" type="password" id="form3Example4cd" class="form-control" />
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-check d-flex align-items-center flex-row mb-5">
+                                @Html.CheckBoxFor(Model => Model.AgreeServices)
+                                <label class="form-check-label" for="form2Example3">
+                                    I agree all statements in <a href="#!">Terms of service</a>
+                                </label>
+                                <span asp-validation-for="AgreeServices" class="text-danger"></span>
+                            </div>
+
+                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                            </div>
+
+                            @*</form>*@
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://kit.fontawesome.com/86106e9417.js" crossorigin="anonymous"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
