@@ -13,7 +13,7 @@ namespace LoginRagil.Models
         [Required]
         public int Entries { get; set; }
         [Required]
-        public DateTime Created { get; set; }
+        public DateTime Created { get; set; } = DateTime.UtcNow;
         public string UrlUserEmail { get; set; } = string.Empty;
         public virtual ICollection<Entry> EntriesPc { get; set; }
 

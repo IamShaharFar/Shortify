@@ -1,5 +1,6 @@
 ﻿using LoginRagil.Models;
 using LoginRagil.NewFolder;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ namespace LoginRagil.Controllers
         [HttpGet("links")]
         public IActionResult Links()
         {
+            if(!User.Identity.IsAuthenticated) { return View("Unauthorized"); }
             var user = HttpContext.User;
             var email = user.FindFirstValue(ClaimTypes.Email);
             var tempUser = _db.Users.FirstOrDefault(u => u.Email == email);
@@ -31,6 +33,7 @@ namespace LoginRagil.Controllers
         [HttpGet("logger/{shorturl}")]
         public IActionResult Logger(string shorturl)
         {
+            if (!User.Identity.IsAuthenticated) { return View("Unauthorized"); }
             shorturl = System.Web.HttpUtility.UrlDecode(shorturl);
             var listloggers = _db.Entries.ToList().FindAll(e => e.ShortUrl == shorturl);
             if (listloggers.Count == 0) { return View(new List<Entry>()); }
@@ -39,6 +42,7 @@ namespace LoginRagil.Controllers
         [HttpGet("delete")]
         public async Task<IActionResult> Delete([FromQuery] string shorturl)
         {
+            if (!User.Identity.IsAuthenticated) { return View("Unauthorized"); }
             var urltodelete = await _db.UrlPairs.FirstAsync(u => u.ShortUrl == shorturl);
             if (urltodelete != null)
             {

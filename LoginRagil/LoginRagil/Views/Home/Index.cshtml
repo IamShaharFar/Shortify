@@ -13,6 +13,25 @@
             <a id="Copyurl" class="btn btn-primary align-self-center mx-auto" style="width:23vw">Copy url <i class="fa-regular fa-clipboard"></i></a>
         </div>
     </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="bg-white p-3 rounded-3 d-flex justify-content-center flex-column mb-3">
+            <h3 class="text-center text-primary display-2 fw-bold">Custom Url <i class="fa-solid fa-link"></i></h3>
+            <input id="customfullurl" placeholder="Enter Your Full Url :" type="text" class="form-control mb-3" />
+            <div style="display:flex;justify-content:center" class="mb-2">
+                <label class="fw-bold">https://localhost:7207/s/</label>
+                <input id="customshorturl" />
+            </div>
+            <label style="display:none" id="customurl" class="text-center flex-lg-wrap fw-bold mb-4">Your link</label>
+            <span style="display:none" id="errorcustom" class="text-danger text-center">custom already taken!</span>
+            <div class="d-flex justify-content-evenly">
+                <a id="customClean" class="btn btn-primary align-self-center mx-auto" style="width:23vw">Clean url <i class="fa-solid fa-text-slash"></i></a>
+                <a id="customgen" class="btn btn-primary align-self-center mx-auto" style="width:23vw">Generate <i class="fa-solid fa-link"></i></a>
+                <a id="customCopyurl" class="btn btn-primary align-self-center mx-auto" style="width:23vw">Copy url <i class="fa-regular fa-clipboard"></i></a>
+            </div>
+        </div>
+    }
+
     <div class="bg-white p-3 rounded-3 mb-3">
         <h2>Simple and fast URL shortener!</h2>
         <p>

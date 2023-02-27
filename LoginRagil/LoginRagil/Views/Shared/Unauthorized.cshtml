@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Unauthorized";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1>You are not authorized to view this page.</h1>
+            <p>Please login or create an account to access this content.</p>
+            <a href="@Url.Action("Login", "Accounts")" class="btn btn-primary">Login</a>
+            <a href="@Url.Action("Register", "Accounts")" class="btn btn-secondary">Create Account</a>
+        </div>
+    </div>
+</div>
+

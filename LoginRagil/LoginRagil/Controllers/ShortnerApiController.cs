@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using LoginRagil.NewFolder;
 using LoginRagil.Servieces;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static System.Net.WebRequestMethods;
 
 namespace UrlShortner.Controllers
 {
@@ -37,14 +39,14 @@ namespace UrlShortner.Controllers
             if (tempUser != null)
             {
                 var list = _db.UrlPairs.ToList();
-                UrlPair found = null;
+                UrlPair? found = null;
                 if (list.Count > 0) { found = list.FirstOrDefault(u => { return u.UrlUserEmail == tempUser.Email && u.FullUrl == fullurl; }); }
                 if (found != null) { return found.ShortUrl; }
             }
             else
             {
                 var list = _db.UrlPairs.ToList();
-                UrlPair found = null;
+                UrlPair? found = null;
                 if (list.Count > 0) { found = _db.UrlPairs.ToList().FirstOrDefault(u => { return u.UrlUserEmail == "" && u.FullUrl == fullurl; }); }
                 if (found != null) { return found.ShortUrl; }
             }
@@ -57,6 +59,23 @@ namespace UrlShortner.Controllers
             }
             return s != "" ? Ok(s) : BadRequest();
         }
+
+        [HttpPost("custom/{custom}")]
+        public ActionResult<string> GetCustomUrl([FromBody]string fullurl , string custom)
+        {
+            if (!User.Identity.IsAuthenticated) { return BadRequest("You need to login to do this action!"); }
+            var user = HttpContext.User;
+            var email = user.FindFirstValue(ClaimTypes.Email);
+            var tempUser = _db.Users.FirstOrDefault(u => u.Email == email);
+            if(!_db.UrlPairs.Any(u => u.ShortUrl == "https://localhost:7207/s/" + custom))
+            {
+                _db.UrlPairs.Add(new UrlPair { ShortUrl = "https://localhost:7207/s/" + custom, FullUrl = fullurl, UrlUserEmail = email });
+                _db.SaveChanges();
+                return Ok("https://localhost:7207/s/" + custom);
+            }
+            return StatusCode(409, "custom already taken!");
+        }
+
         [HttpGet("/s/{shorturl}")]
         public ActionResult Get(string shorturl)
         {
