@@ -16,7 +16,7 @@ namespace LoginRagil.Servieces
             if (string.IsNullOrEmpty(fullUrl)) return "";
             //todo: validate fullurl
             var url = _db.UrlPairs.FirstOrDefault(u => u.FullUrl == fullUrl);
-            if (url != null) { return url.ShortUrl; }
+            if (url != null) { return url.ShortUrl!; }
             //made-todo: check if the fullurl already exists in the user
             string result = "";
             do

@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\LoginRagil",
-    "\\LoginRagil\\LoginRagil",
-    "\\LoginRagil\\LoginRagil\\Views",
-    "\\LoginRagil\\LoginRagil\\Views\\Accounts"
+    ""
   ],
-  "SelectedNode": "\\LoginRagil\\LoginRagil\\Views\\Accounts\\Settings.cshtml",
+  "SelectedNode": "\\LoginRagil.sln",
   "PreviewInSolutionExplorer": false
 }

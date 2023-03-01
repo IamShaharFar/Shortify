@@ -55,7 +55,7 @@ namespace LoginRagil.Controllers
                 if (user.Password == model.Password)
                 {
                     //todo: add to sign in manager
-                    SignInAsync(user);
+                    await SignInAsync(user);
                     return RedirectToAction("Index", "Home");
                 }
                 return RedirectToAction("Index", "Home");
@@ -70,12 +70,14 @@ namespace LoginRagil.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public async void SignInAsync(LUser user)
+        public async 
+        Task
+SignInAsync(LUser user)
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.UserName!),
+                new Claim(ClaimTypes.Email, user.Email!),
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -101,10 +103,10 @@ namespace LoginRagil.Controllers
         {
             var res = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            var claims = res.Principal.Identities.FirstOrDefault()
+            var claims = res.Principal!.Identities.FirstOrDefault()!
                         .Claims.Select(c => new { c.Value, c.Type, c.Properties });
-            var name = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value;
-            var email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value;
+            var name = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+            var email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)!.Value;
             if (_db.Users.Any(u => u.Email == email))
             {
                 var user = _db.Users.First(u => u.Email == email);
@@ -127,10 +129,10 @@ namespace LoginRagil.Controllers
         {
             var res = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            var claims = res.Principal.Identities.FirstOrDefault()
+            var claims = res.Principal!.Identities.FirstOrDefault()!
                         .Claims.Select(c => new { c.Value, c.Type, c.Properties });
-            var name = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value;
-            var email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value;
+            var name = claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+            var email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)!.Value;
             if (_db.Users.Any(u => u.Email == email))
             {
                 return RedirectToAction("register");
@@ -142,7 +144,7 @@ namespace LoginRagil.Controllers
             };
             _db.Users.Add(user);
             _db.SaveChanges();
-            SignInAsync(user);
+            await SignInAsync(user);
             return RedirectToAction("Index", "Home");
         }
 

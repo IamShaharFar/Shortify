@@ -41,20 +41,20 @@ namespace UrlShortner.Controllers
                 var list = _db.UrlPairs.ToList();
                 UrlPair? found = null;
                 if (list.Count > 0) { found = list.FirstOrDefault(u => { return u.UrlUserEmail == tempUser.Email && u.FullUrl == fullurl; }); }
-                if (found != null) { return found.ShortUrl; }
+                if (found != null) { return found.ShortUrl!; }
             }
             else
             {
                 var list = _db.UrlPairs.ToList();
                 UrlPair? found = null;
                 if (list.Count > 0) { found = _db.UrlPairs.ToList().FirstOrDefault(u => { return u.UrlUserEmail == "" && u.FullUrl == fullurl; }); }
-                if (found != null) { return found.ShortUrl; }
+                if (found != null) { return found.ShortUrl!; }
             }
             var s = await _service.Short(fullurl);
             var url = _db.UrlPairs.FirstOrDefault(u => u.ShortUrl == s);
             if (tempUser!=null)
             {
-                url.UrlUserEmail = tempUser.Email;
+                url!.UrlUserEmail = tempUser.Email!;
                 _db.SaveChanges();
             }
             return s != "" ? Ok(s) : BadRequest();
@@ -63,7 +63,7 @@ namespace UrlShortner.Controllers
         [HttpPost("custom/{custom}")]
         public ActionResult<string> GetCustomUrl([FromBody]string fullurl , string custom)
         {
-            if (!User.Identity.IsAuthenticated) { return BadRequest("You need to login to do this action!"); }
+            if (!User.Identity!.IsAuthenticated) { return BadRequest("You need to login to do this action!"); }
             var user = HttpContext.User;
             var email = user.FindFirstValue(ClaimTypes.Email);
             var tempUser = _db.Users.FirstOrDefault(u => u.Email == email);
@@ -83,7 +83,7 @@ namespace UrlShortner.Controllers
             if (url != null)
             { 
                 url.Entries++;
-                url.EntriesPc.Add(new Entry { Ip = Request.HttpContext.Connection.RemoteIpAddress.ToString(), EntryTime = DateTime.UtcNow, ShortUrl = "https://localhost:7207/s/" + shorturl });
+                url.EntriesPc.Add(new Entry { Ip = Request.HttpContext.Connection.RemoteIpAddress!.ToString(), EntryTime = DateTime.UtcNow, ShortUrl = "https://localhost:7207/s/" + shorturl });
 
                 _db.SaveChanges();
             }

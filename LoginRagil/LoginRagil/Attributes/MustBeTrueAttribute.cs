@@ -9,7 +9,7 @@ namespace LoginRagil.Attributes
 {
     public class MustBeTrueAttribute : ValidationAttribute, IClientValidatable
     {
-        public override bool IsValid(object value)
+        public override bool IsValid(object? value)
         {
             return value is bool && (bool)value;
         }
