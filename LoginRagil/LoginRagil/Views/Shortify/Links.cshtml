@@ -18,7 +18,7 @@
             <td>@pair.Created</td>
             <td><a asp-controller="Shortify" asp-action="Logger" asp-route-shorturl="@pair.ShortUrl">Logger</a></td>
             <td>
-                <a href="https://localhost:7222/delete?shorturl=@pair.ShortUrl">
+                <a asp-action="Delete" asp-controller="Shortify" asp-route-shorturl="@pair.ShortUrl">
                 <i class="fa-solid fa-trash"></i>
                 </a>
             </td>

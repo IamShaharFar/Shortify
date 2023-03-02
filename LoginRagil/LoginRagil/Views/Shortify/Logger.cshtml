@@ -8,6 +8,79 @@
 @if (Model.Count > 0)
 {
     <h1>Logger list for @_db.UrlPairs.First(u => u.ShortUrl == Model.First().ShortUrl).FullUrl</h1>
+    <div id="Graph">
+        @{
+            int[] entriesPerMonth = new int[12];
+            foreach (var e in Model)
+            {
+                entriesPerMonth[e.EntryTime.Month - 1]++;
+            }
+
+            int BackMonth(int months)
+            {
+                int month = DateTime.Now.Month;
+                if (month - months < 1)
+                {
+                    return month - months + 12;
+                }
+                else
+                {
+                    return month - months;
+                }
+            }
+        }
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+            var month = @DateTime.Now.Month.ToString()
+
+                function getMonthName(monthIndex) {
+                    var months = [
+                        'January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'
+                    ];
+                    return months[monthIndex - 1];
+                }
+
+            function backmonth(monthes) {
+                monthes = parseInt(monthes)
+                if (month - monthes < 1) return month - monthes + 12;
+                else return month - monthes;
+            }
+
+            google.charts.load('current', { packages: ['corechart', 'line'] });
+            google.charts.setOnLoadCallback(drawLineColors);
+
+            function drawLineColors() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Month');
+                data.addColumn('number', 'Entries');
+
+                data.addRows([
+                    [getMonthName(backmonth(11)), @entriesPerMonth[BackMonth(11)-1]], [getMonthName(backmonth(10)), @entriesPerMonth[BackMonth(10)-1]],
+                    [getMonthName(backmonth(9)), @entriesPerMonth[BackMonth(9)-1]], [getMonthName(backmonth(8)), @entriesPerMonth[BackMonth(8)-1]],
+                    [getMonthName(backmonth(7)), @entriesPerMonth[BackMonth(7)-1]], [getMonthName(backmonth(6)), @entriesPerMonth[BackMonth(6)-1]],
+                    [getMonthName(backmonth(5)), @entriesPerMonth[BackMonth(5)-1]], [getMonthName(backmonth(4)), @entriesPerMonth[BackMonth(4)-1]],
+                    [getMonthName(backmonth(3)), @entriesPerMonth[BackMonth(3)-1]], [getMonthName(backmonth(2)), @entriesPerMonth[BackMonth(2)-1]],
+                    [getMonthName(backmonth(1)), @entriesPerMonth[BackMonth(1)-1]], [getMonthName(month), @entriesPerMonth[BackMonth(0)-1]]
+                ]);
+
+                var options = {
+                    hAxis: {
+                        title: 'Month'
+                    },
+                    vAxis: {
+                        title: 'Entries'
+                    },
+                    colors: ['#a52714', '#097138']
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+        <div id="chart_div" style="width: 90vw; height: 500px; display: flex; justify-content: space-around;margin-left:-10vw;"></div>
+    </div>
     <table class="table table-striped table-hover">
         <tr>
             <th>Ip</th>
@@ -23,7 +96,8 @@
         }
     </table>
 }
-else{
+else
+{
     <h1>You have no logger to show</h1>
 }
 

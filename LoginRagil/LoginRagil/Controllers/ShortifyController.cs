@@ -40,12 +40,14 @@ namespace LoginRagil.Controllers
             return View(listloggers);
         }
         [HttpGet("delete")]
-        public async Task<IActionResult> Delete([FromQuery] string shorturl)
+        public async Task<IActionResult> Delete(string shorturl)
         {
             if (!User.Identity!.IsAuthenticated) { return View("Unauthorized"); }
             var urltodelete = await _db.UrlPairs.FirstAsync(u => u.ShortUrl == shorturl);
             if (urltodelete != null)
             {
+                var listEntries = _db.Entries.ToList().FindAll(en => en.ShortUrl == shorturl);
+                if(listEntries.Count > 0) { urltodelete.EntriesPc = new List<Entry>(); _db.SaveChanges(); }
                 _db.UrlPairs.Remove(urltodelete);
                 await _db.SaveChangesAsync();
             }
