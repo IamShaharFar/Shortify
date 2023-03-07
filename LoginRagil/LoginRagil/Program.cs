@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using LoginRagil.Servieces;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//check for master
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<LoginDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Urls")));
