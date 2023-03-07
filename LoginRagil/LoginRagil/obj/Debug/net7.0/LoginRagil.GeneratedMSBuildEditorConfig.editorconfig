@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LoginRagil
 build_property.RootNamespace = LoginRagil
-build_property.ProjectDir = D:\Github_Projects\Sss\LoginRagil\LoginRagil\
+build_property.ProjectDir = C:\Users\shaha\Source\Repos\Shortifytest\LoginRagil\LoginRagil\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Github_Projects\Sss\LoginRagil\LoginRagil
+build_property.MSBuildProjectDirectory = C:\Users\shaha\Source\Repos\Shortifytest\LoginRagil\LoginRagil
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Accounts/Login.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Accounts/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Accounts/Register.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Accounts/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Accounts/Settings.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Accounts/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcU2V0dGluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Home/Index.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Home/Privacy.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Shared/Error.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Shared/Unauthorized.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Shared/Unauthorized.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVuYXV0aG9yaXplZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Shortify/Links.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Shortify/Links.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcnRpZnlcTGlua3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Shortify/Logger.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Shortify/Logger.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcnRpZnlcTG9nZ2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/_ViewImports.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/_ViewStart.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github_Projects/Sss/LoginRagil/LoginRagil/Views/Shared/_Layout.cshtml]
+[C:/Users/shaha/Source/Repos/Shortifytest/LoginRagil/LoginRagil/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-egd85svzjo
