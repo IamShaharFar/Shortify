@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ne/Og004GPIepD1GbN/jlvP9mtNzCXK4jI/zpkK5FOgqyucVaRg2P7ulTbsVHXYrT+RjQolqBirN9wH0mGSY4w==",
+  "dgSpecHash": "b7VBaEm1jEHKyjudBIvIZq94IPPvBke56rxO8gSp0StaiBk7rQqt+xhIYEK40zTf3DdME7KItjWtR0Jo9iF8Ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shaha\\Source\\Repos\\Shortifytest\\LoginRagil\\LoginRagil\\LoginRagil.csproj",
+  "projectFilePath": "D:\\Github_Projects\\Shortify\\LoginRagil\\LoginRagil\\LoginRagil.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shaha\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\shaha\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
