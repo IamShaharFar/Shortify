@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github_Projects\\Shortify\\LoginRagil\\LoginRagil\\LoginRagil.csproj": {}
+    "D:\\Github-projects\\LoginRagil\\LoginRagil\\LoginRagil.csproj": {}
   },
   "projects": {
-    "D:\\Github_Projects\\Shortify\\LoginRagil\\LoginRagil\\LoginRagil.csproj": {
+    "D:\\Github-projects\\LoginRagil\\LoginRagil\\LoginRagil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github_Projects\\Shortify\\LoginRagil\\LoginRagil\\LoginRagil.csproj",
+        "projectUniqueName": "D:\\Github-projects\\LoginRagil\\LoginRagil\\LoginRagil.csproj",
         "projectName": "LoginRagil",
-        "projectPath": "D:\\Github_Projects\\Shortify\\LoginRagil\\LoginRagil\\LoginRagil.csproj",
+        "projectPath": "D:\\Github-projects\\LoginRagil\\LoginRagil\\LoginRagil.csproj",
         "packagesPath": "C:\\Users\\shaha\\.nuget\\packages\\",
-        "outputPath": "D:\\Github_Projects\\Shortify\\LoginRagil\\LoginRagil\\obj\\",
+        "outputPath": "D:\\Github-projects\\LoginRagil\\LoginRagil\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\shaha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
